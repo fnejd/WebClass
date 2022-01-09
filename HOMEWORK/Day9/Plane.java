@@ -23,7 +23,7 @@ public class Plane{
 	public static void main(String[] args) {
 
         //4
-		Journey day = new Journey();
+	Journey day = new Journey();
         day.setStartDay(2022, 2, 1);
         day.setArrivalDay(2022, 2, 1);
         System.out.println("출발시간 ");
@@ -31,19 +31,19 @@ public class Plane{
         System.out.println("도착시간 ");
         day.printArrivalDay();
 
-       day.insertDest("싱가폴");
-       System.out.println(day.flight());
-       System.out.println("isDomestic : " + day.isDomestic);
-       System.out.println("---------");
+        day.insertDest("싱가폴");
+        System.out.println(day.flight());
+        System.out.println("isDomestic : " + day.isDomestic);
+        System.out.println("---------");
        
-       day.insertDest("김포");
-       System.out.println(day.flight());
-       System.out.println("isDomestic : " +day.isDomestic);
-       System.out.println("---------");
+        day.insertDest("김포");
+        System.out.println(day.flight());
+        System.out.println("isDomestic : " +day.isDomestic);
+        System.out.println("---------");
        
-       day.insertDest("하와이");
-       System.out.println(day.flight());
-       System.out.println("isDomestic : " + day.isDomestic);
+        day.insertDest("하와이");
+        System.out.println(day.flight());
+        System.out.println("isDomestic : " + day.isDomestic);
        
         
   
@@ -54,8 +54,8 @@ public class Plane{
 abstract class Airplane{
 	
     //4
-		Calendar startday = Calendar.getInstance();
-	    Calendar arrivalday = Calendar.getInstance();
+    Calendar startday = Calendar.getInstance();
+    Calendar arrivalday = Calendar.getInstance();
     
     //5
     String destination;
@@ -71,7 +71,7 @@ abstract class Airplane{
 
 class Journey extends Airplane{
 
-	//5
+    //5
     SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
     
     String[] Domestic = new String[] {"김포","인천","김해","제주","울산"};
@@ -127,16 +127,16 @@ class Journey extends Airplane{
     	if(Dom.contains(destination)) {
    		 	type = "국내선";
   
-   	 	}
-   	 	else if(Fogn.contains(destination)) {
+   	 }
+   	else if(Fogn.contains(destination)) {
    	 		type = "국외선";
    		 
-   	 	}
-   	 	else {
+   	 }
+   	else {
    	 		type = "목적지 오류";
    	 		destination = " 없는 목적지 ";
    		 
-   	 	}
+   	 }
    	
     }
 
