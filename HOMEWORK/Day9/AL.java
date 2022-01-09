@@ -3,54 +3,54 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
 
-/*°úÁ¦7) ArrayList¿¡ ÇöÀç½Ã°£ÀÇ Date °´Ã¼¸¦ ÀÔ·ÂÇÏ°í, 
-ArrayListÀÇ °ªÀ» Â÷·Ê´ë·Î Ãâ·ÂÇÏ½Ã¿À.(±âº»)*/ 
+/*ê³¼ì œ7) ArrayListì— í˜„ì¬ì‹œê°„ì˜ Date ê°ì²´ë¥¼ ì…ë ¥í•˜ê³ , 
+ArrayListì˜ ê°’ì„ ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥í•˜ì‹œì˜¤.(ê¸°ë³¸)*/ 
 
-/*°úÁ¦8) ArrayList¿¡ ³»ÀÏ½Ã°£ÀÇ Date °´Ã¼¸¦ ÀÔ·ÂÇÏ°í, 
-ArrayListÀÇ °ªÀ» Â÷·Ê´ë·Î Ãâ·ÂÇÏ½Ã¿À.(½ÉÈ­) */
+/*ê³¼ì œ8) ArrayListì— ë‚´ì¼ì‹œê°„ì˜ Date ê°ì²´ë¥¼ ì…ë ¥í•˜ê³ , 
+ArrayListì˜ ê°’ì„ ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥í•˜ì‹œì˜¤.(ì‹¬í™”) */
 
-/*°úÁ¦9) ArrayList¿¡ 1³â ÀÌ³»ÀÇ ³¯Â¥¸¦ randomÇÏ°Ô ¸¸µé¾î¼­ ÀÔ·ÂÇÏ°í, 
-ÇöÀç µé¾îÀÖ´Â 3°³ÀÇ °ª°ú ÇöÀç½Ã°£ÀÇ Â÷ÀÌ¸¦ ¼øÂ÷´ë·Î Ãâ·ÂÇÏ½Ã¿À.(½ÉÈ­) */
+/*ê³¼ì œ9) ArrayListì— 1ë…„ ì´ë‚´ì˜ ë‚ ì§œë¥¼ randomí•˜ê²Œ ë§Œë“¤ì–´ì„œ ì…ë ¥í•˜ê³ , 
+í˜„ì¬ ë“¤ì–´ìˆëŠ” 3ê°œì˜ ê°’ê³¼ í˜„ì¬ì‹œê°„ì˜ ì°¨ì´ë¥¼ ìˆœì°¨ëŒ€ë¡œ ì¶œë ¥í•˜ì‹œì˜¤.(ì‹¬í™”) */
 
 
 public class AL {
 	
 	public static void main(String[] args) {
 		
-		//7  ÇöÀç½Ã°£ÀÇ Date °´Ã¼¸¦ ÀÔ·Â
+		//7  í˜„ì¬ì‹œê°„ì˜ Date ê°ì²´ë¥¼ ì…ë ¥
 		ArrayList<Date> date = new ArrayList<Date>();
-		Date today = new Date(0,"ÇöÀç");
+		Date today = new Date(0,"í˜„ì¬");
 		date.add(today);
 		
-		//7  ArrayListÀÇ °ªÀ» Â÷·Ê´ë·Î Ãâ·Â
+		//7  ArrayListì˜ ê°’ì„ ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥
 		for(int i=0; i<date.size();i++){
             System.out.println(date.get(i).state + " " + date.get(i).time);
         }
 		
-		//8  ³»ÀÏ½Ã°£ÀÇ Date °´Ã¼¸¦ ÀÔ·Â
-		Date tommorrow = new Date(1,"³»ÀÏ");
-		date.add(tommorrow);
+		//8  ë‚´ì¼ì‹œê°„ì˜ Date ê°ì²´ë¥¼ ì…ë ¥
+		Date tomorrow = new Date(1,"ë‚´ì¼");
+		date.add(tomorrow);
 		
 		
-		//8  ArrayListÀÇ °ªÀ» Â÷·Ê´ë·Î Ãâ·Â
+		//8  ArrayListì˜ ê°’ì„ ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥
 		for(int i=0; i<date.size();i++){
             System.out.println(date.get(i).state + " " + date.get(i).time);
         }
 		
-		//9 1³â ÀÌ³»ÀÇ ³¯Â¥¸¦ randomÇÏ°Ô ¸¸µé¾î¼­ ÀÔ·Â
+		//9 1ë…„ ì´ë‚´ì˜ ë‚ ì§œë¥¼ randomí•˜ê²Œ ë§Œë“¤ì–´ì„œ ì…ë ¥
 		Random random = new Random();
-		Date randomDay = new Date(random.nextInt(365)+1,"·£´ı³¯Â¥");
+		Date randomDay = new Date(random.nextInt(365)+1,"ëœë¤ë‚ ì§œ");
 
 		date.add(randomDay);
-		//8  ArrayListÀÇ °ªÀ» Â÷·Ê´ë·Î Ãâ·Â
+		//8  ArrayListì˜ ê°’ì„ ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥
 		for(int i=0; i<date.size();i++){
 		     System.out.println(date.get(i).state + " " + date.get(i).time);
 		}
 		
 		
-		//9  ÇöÀç µé¾îÀÖ´Â 3°³ÀÇ °ª°ú ÇöÀç½Ã°£ÀÇ Â÷ÀÌ¸¦ ¼øÂ÷´ë·Î Ãâ·Â
-		System.out.println("·£´ı³¯Â¥ - ÇöÀç : " + diffDay(date.get(0),date.get(2)));
-		System.out.println("·£´ı³¯Â¥ - ³»ÀÏ " + diffDay(date.get(1),date.get(2)));
+		//9  í˜„ì¬ ë“¤ì–´ìˆëŠ” 3ê°œì˜ ê°’ê³¼ í˜„ì¬ì‹œê°„ì˜ ì°¨ì´ë¥¼ ìˆœì°¨ëŒ€ë¡œ ì¶œë ¥
+		System.out.println("ëœë¤ë‚ ì§œ - í˜„ì¬ : " + diffDay(date.get(0),date.get(2)));
+		System.out.println("ëœë¤ë‚ ì§œ - ë‚´ì¼ " + diffDay(date.get(1),date.get(2)));
 		
 		
 		
