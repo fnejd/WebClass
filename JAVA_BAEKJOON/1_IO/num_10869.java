@@ -4,9 +4,9 @@ public class num_10869 {
 	public static void main(String[] args) {
 		
 		
-		//»çÄ¢¿¬»ê
+		//ì‚¬ì¹™ì—°ì‚°
 		
-		//µÎ ÀÚ¿¬¼ö A¿Í B
+		//ë‘ ìì—°ìˆ˜ Aì™€ B ì…ë ¥
 		Scanner sc = new Scanner(System.in);
 		int a,b;
 		
