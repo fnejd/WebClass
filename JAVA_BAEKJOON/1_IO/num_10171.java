@@ -3,9 +3,9 @@ public class num_10171 {
 
 	public static void main(String args[]) {
 		
-		//°í¾çÀÌ
+		//ê³ ì–‘ì´
 		
-		//°í¾çÀÌ Ãâ·Â
+		//ê³ ì–‘ì´ ì¶œë ¥
 		System.out.println("\\    /\\");
 		System.out.println(" )  ( ')");
 		System.out.println("(  /  )");
