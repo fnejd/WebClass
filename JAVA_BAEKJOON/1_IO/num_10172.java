@@ -1,9 +1,9 @@
 
 public class num_10172 {
 	public static void main(String[] args) {
-		//°³
+		//ê°œ
 		
-		//°­¾ÆÁö Ãâ·Â 
+		//ê°•ì•„ì§€ ì¶œë ¥
 		//    " -> \" 
 		//    \ -> \\
 		
