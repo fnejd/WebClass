@@ -4,6 +4,7 @@ public class num_1193 {
 
 	public static void main(String[] args) {
 		
+		//분수 찾기
 		
 		Scanner sc = new Scanner(System.in);
 		//대각선 줄 
