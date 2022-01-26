@@ -148,8 +148,8 @@ public class MemberStart {
 	public void memberAllList() {
 		//DAO에 구현되어 있는 memberList() 호출
 		MemberDAO dao = new MemberDAO();
-		//과제 예시
-		//dao.memberList2();
+		
+		dao.memberList2();
 		
 		List<MemberDTO> list = dao.memberList();
 		
