@@ -86,6 +86,7 @@ public class Stack_Practice2 {
                     }
                     break;
 
+                //isFull
                 case 7:
                     if(stack.isFull()){
                         System.out.println("Stack is full");
