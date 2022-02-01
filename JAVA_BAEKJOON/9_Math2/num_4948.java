@@ -26,14 +26,18 @@ public class num_4948 {
             //소수 여부 담는 배열 (false - 소수)
             boolean[] arr= new boolean[2*n+1];
 
+            //1은 소수가 아니므로 true
             arr[1] = true;
 
             for(int i=2; i<=2*n; i++) {
     			
+            	//소수가 아니므로 건너뛴다. 
     			if(arr[i]==true) {
     				continue;
     			}
     			
+    			//i는 소수이다. 
+    			//i의 배수들은 소수가 아니므로 배열의 값에 true를 대입
     			for(int j=i+i; j<=2*n; j = j+i) {
     				arr[j] = true;
     			}
