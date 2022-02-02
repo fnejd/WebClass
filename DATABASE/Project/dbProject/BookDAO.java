@@ -11,17 +11,17 @@ public class BookDAO{
 	Scanner sc = new Scanner(System.in);
 	
 	public void insertBook(BookDTO bookDTO) {
-		System.out.println("µµ¼­ ¹øÈ£ : ");
+		System.out.println("ë„ì„œ ë²ˆí˜¸ : ");
 		bookDTO.setBookNo(sc.nextLine());
-		System.out.println("µµ¼­ Á¦¸ñ : ");
+		System.out.println("ë„ì„œ ì œëª© : ");
 		bookDTO.setBookTitle(sc.nextLine());
-		System.out.println("ÀúÀÚ : ");
+		System.out.println("ì €ì : ");
 		bookDTO.setBookAuthor(sc.nextLine());
-		System.out.println("¹ßÇà ¿¬µµ : ");
+		System.out.println("ë°œí–‰ ì—°ë„ : ");
 		bookDTO.setBookYear(Integer.parseInt(sc.nextLine()));
-		System.out.println("°¡°İ : ");
+		System.out.println("ê°€ê²© : ");
 		bookDTO.setBookPrice(Integer.parseInt(sc.nextLine()));
-		System.out.println("ÃâÆÇ»ç : ");
+		System.out.println("ì¶œíŒì‚¬ : ");
 		bookDTO.setBookPublisher(sc.nextLine());
 		
 		
@@ -30,7 +30,7 @@ public class BookDAO{
 		try {
 			getConn();
 			
-			//Äõ¸®¹®
+			//ì¿¼ë¦¬ë¬¸
 			String sql = "insert into book(bookNo, bookTitle, bookAuthor, bookYear, bookPrice, bookPublisher) "
 					+ " values(?,?,?,?,?,?)";
 			
@@ -46,11 +46,11 @@ public class BookDAO{
 			
 			result = pstmt.executeUpdate();
 			
-			System.out.println(result +"°³ ·¹ÄÚµå µî·Ï");
+			System.out.println(result +"ê°œ ë ˆì½”ë“œ ë“±ë¡");
 			
 			
 		}catch(Exception e) {
-			System.out.println("µµ¼­ µî·Ï ¿¹¿Ü ¹ß»ı");
+			System.out.println("ë„ì„œ ë“±ë¡ ì˜ˆì™¸ ë°œìƒ");
 			e.printStackTrace();
 			
 		}finally {
@@ -81,7 +81,7 @@ public class BookDAO{
 			}
 			
 		}catch(Exception e) {
-			System.out.println("¸ğµç µµ¼­ Ãâ·Â ¿À·ù");
+			System.out.println("ëª¨ë“  ë„ì„œ ì¶œë ¥ ì˜¤ë¥˜");
 			e.printStackTrace();
 			
 		}finally {
@@ -93,13 +93,13 @@ public class BookDAO{
 	
 	
 	static {
-		//1.µå¶óÀÌ¹ö ·Îµù
+		//1.ë“œë¼ì´ë²„ ë¡œë”©
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			
 		}catch(Exception e) {
-			System.out.println("µå¶óÀÌºê ·Îµù ¿¹¿Ü ¹ß»ı");
+			System.out.println("ë“œë¼ì´ë¸Œ ë¡œë”© ì˜ˆì™¸ ë°œìƒ");
 			
 		}
 	}
@@ -109,7 +109,7 @@ public class BookDAO{
 	protected ResultSet rs = null;
 
 	
-	//2. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
+	//2. ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
 	public void getConn() {
 		
 		String url = "jdbc:mysql://localhost/homework";
@@ -120,7 +120,7 @@ public class BookDAO{
 			conn = DriverManager.getConnection(url, id, pw);
 			
 		}catch(Exception e) {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¿¹¿Ü ¹ß»ı");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì˜ˆì™¸ ë°œìƒ");
 		}
 	}
 	
@@ -131,7 +131,7 @@ public class BookDAO{
 			if(conn != null) conn.close();
 			
 		}catch(Exception e) {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ´İ±â ¿¹¿Ü ¹ß»ı");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ë‹«ê¸° ì˜ˆì™¸ ë°œìƒ");
 		}
 	}
 }

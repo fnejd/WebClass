@@ -16,41 +16,41 @@ public class MemberStart {
 			int menu = Integer.parseInt(scan.nextLine());
 			
 			if(menu == 1) {
-				//µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ È¸¿ø Á¤º¸ ÀüÃ¼¸¦ ¼±ÅÃÇÏ¿© ÄÜ¼Ö Ãâ·ÂÇÏ´Â ±â´É ±¸Çö
-				//¸ñ·Ï Ãâ·Â
+				//ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ íšŒì› ì •ë³´ ì „ì²´ë¥¼ ì„ íƒí•˜ì—¬ ì½˜ì†” ì¶œë ¥í•˜ëŠ” ê¸°ëŠ¥ êµ¬í˜„
+				//ëª©ë¡ ì¶œë ¥
 				memberAllList();
 				
 				
 			}else if(menu == 2) {
-				//È¸¿ø µî·Ï
+				//íšŒì› ë“±ë¡
 				//main -> DTO -> DAO
 				memberInsert();
 				
 				
 			}else if(menu == 3) {
-				//È¸¿ø Á¤º¸ ¼öÁ¤
+				//íšŒì› ì •ë³´ ìˆ˜ì •
 				memberEdit();
 			
 			}else if(menu == 4) {
-				//È¸¿ø»èÁ¦
+				//íšŒì›ì‚­ì œ
 				memberDel();
 				
 			}else if(menu == 5) {
-				System.exit(0); //ÇÁ·Î±×·¥À» Á¾·á½ÃÅ°´Â ¸Ş¼­µå »ç¿ëÇØ ÇÁ·Î±×·¥ Á¾·á½ÃÅ²´Ù. 
+				System.exit(0); //í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œì‹œí‚¤ëŠ” ë©”ì„œë“œ ì‚¬ìš©í•´ í”„ë¡œê·¸ë¨ ì¢…ë£Œì‹œí‚¨ë‹¤. 
 				
 			}else {
-				System.out.println("¸Ş´º¸¦ Àß¸ø ÀÔ·ÂÇÏ¿´½À´Ï´Ù.");
+				System.out.println("ë©”ë‰´ë¥¼ ì˜ëª» ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			
 			
-		}//while¹®
+		}//whileë¬¸
 		
 	}
-	//È¸¿øÁ¤º¸ Áö¿ì±â
+	//íšŒì›ì •ë³´ ì§€ìš°ê¸°
 	public void memberDel() {
 		
-		//»èÁ¦ÇÒ È¸¿ø ¹øÈ£
-		System.out.print("»èÁ¦ÇÒ È¸¿ø¹øÈ£ ->");
+		//ì‚­ì œí•  íšŒì› ë²ˆí˜¸
+		System.out.print("ì‚­ì œí•  íšŒì›ë²ˆí˜¸ ->");
 		int num = Integer.parseInt(scan.nextLine());
 		
 		MemberDAO dao = new MemberDAO();
@@ -58,51 +58,51 @@ public class MemberStart {
 		int result = dao.memberDelete(num);
 		
 		if(result>0) {
-			System.out.println(num + "¹ø È¸¿øÀÌ »èÁ¦µÇ¾ú½À´Ï´Ù.");
+			System.out.println(num + "ë²ˆ íšŒì›ì´ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}else {
-			System.out.println(num+ "¹ø È¸¿ø »èÁ¦ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+			System.out.println(num+ "ë²ˆ íšŒì› ì‚­ì œ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 	}
 	
 	
 	
-	//È¸¿øÁ¤º¸ ¼öÁ¤ÇÏ±â
+	//íšŒì›ì •ë³´ ìˆ˜ì •í•˜ê¸°
 	public void memberEdit() {
 		
 		MemberDTO dto = new MemberDTO();
 		
-		//¼öÁ¤ÇÒ È¸¿ø¹øÈ£¸¦ ÀÔ·Â¹Ş°í
-		System.out.println("¼öÁ¤ÇÒ È¸¿ø¹øÈ£-> ");
+		//ìˆ˜ì •í•  íšŒì›ë²ˆí˜¸ë¥¼ ì…ë ¥ë°›ê³ 
+		System.out.println("ìˆ˜ì •í•  íšŒì›ë²ˆí˜¸-> ");
 		dto.setNum(Integer.parseInt(scan.nextLine()));
 		
-		//¿¬¶ôÃ³¸¦ ¼öÁ¤ÇÒÁö , ÀÌ¸ŞÀÏÀ» ¼öÁ¤ÇÒ Áö È®ÀÎÀ» ÇÑ ÈÄ
-		System.out.print("¼öÁ¤ÇÒ Ç×¸ñÀ» ÀÔ·Â (1.¿¬¶ôÃ³ 2. ÀÌ¸ŞÀÏ)-> ");
+		//ì—°ë½ì²˜ë¥¼ ìˆ˜ì •í• ì§€ , ì´ë©”ì¼ì„ ìˆ˜ì •í•  ì§€ í™•ì¸ì„ í•œ í›„
+		System.out.print("ìˆ˜ì •í•  í•­ëª©ì„ ì…ë ¥ (1.ì—°ë½ì²˜ 2. ì´ë©”ì¼)-> ");
 		String que = scan.nextLine();
 		
 		if(que.equals("1")) {
-			//¿¬¶ôÃ³(tel)
-			System.out.print("¼öÁ¤ÇÒ ¿¬¶ôÃ³->");
+			//ì—°ë½ì²˜(tel)
+			System.out.print("ìˆ˜ì •í•  ì—°ë½ì²˜->");
 			dto.setTel(scan.nextLine());
 			
 			
 		}else if(que.equals("2")) {
-			//ÀÌ¸ŞÀÏ(email)
-			System.out.print("¼öÁ¤ÇÒ ÀÌ¸ŞÀÏ->");
+			//ì´ë©”ì¼(email)
+			System.out.print("ìˆ˜ì •í•  ì´ë©”ì¼->");
 			dto.setEmail(scan.nextLine());	
 		}
 		
-		//µ¥ÀÌÅÍ º£ÀÌ½º ¾÷µ¥ÀÌÆ® ¼öÇà
+		//ë°ì´í„° ë² ì´ìŠ¤ ì—…ë°ì´íŠ¸ ìˆ˜í–‰
 		MemberDAO dao = new MemberDAO();
-		//Ã³¸® °á°ú
+		//ì²˜ë¦¬ ê²°ê³¼
 		int cnt = dao.memberUpdate(que, dto);
 		
-		//°á°ú
+		//ê²°ê³¼
 		if(cnt>0) {
-			//¼öÁ¤µÊ
-			System.out.println("È¸¿øÁ¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+			//ìˆ˜ì •ë¨
+			System.out.println("íšŒì›ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}else {
-			//¼öÁ¤¾ÈµÊ
-			System.out.println("È¸¿øÁ¤º¸ ¼öÁ¤ ½ÇÆĞÇÏ¿´½À´Ï´Ù");
+			//ìˆ˜ì •ì•ˆë¨
+			System.out.println("íšŒì›ì •ë³´ ìˆ˜ì • ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤");
 		}
 		
 		
@@ -112,31 +112,31 @@ public class MemberStart {
 	
 	
 	
-	//È¸¿øµî·ÏÇÏ±â
+	//íšŒì›ë“±ë¡í•˜ê¸°
 	public void memberInsert() {
-		//µî·ÏÇÒ È¸¿ø Á¤º¸¸¦ ÀÔ·Â ¹Ş¾Æ DTO °´Ã¼¿¡ setter¸¦ ÇÑ´Ù.
+		//ë“±ë¡í•  íšŒì› ì •ë³´ë¥¼ ì…ë ¥ ë°›ì•„ DTO ê°ì²´ì— setterë¥¼ í•œë‹¤.
 		MemberDTO dto = new MemberDTO();
-		System.out.print("ÀÌ¸§->");
+		System.out.print("ì´ë¦„->");
 		dto.setUsername(scan.nextLine());
-		System.out.print("¿¬¶ôÃ³->");
+		System.out.print("ì—°ë½ì²˜->");
 		dto.setTel(scan.nextLine());
-		System.out.print("ÀÌ¸ŞÀÏ->");
+		System.out.print("ì´ë©”ì¼->");
 		dto.setEmail(scan.nextLine());
-		System.out.print("»ı³â¿ùÀÏ(ex)1900-10-10-->");
+		System.out.print("ìƒë…„ì›”ì¼(ex)1900-10-10-->");
 		dto.setBirth(scan.nextLine());
-		System.out.print("¼ºº°(M,F) ->");
+		System.out.print("ì„±ë³„(M,F) ->");
 		dto.setGender(scan.nextLine());
 		
 		MemberDAO dao = new MemberDAO();
 		int result = dao.memberInsert(dto);
 		
 		if(result>0) {
-			//È¸¿øµî·ÏÀÌ µÇ¾úÀ» ¶§
-			System.out.println(dto.getUsername() + "ÀÇ Á¤º¸°¡ µî·ÏµÇ¾ú½À´Ï´Ù.");
+			//íšŒì›ë“±ë¡ì´ ë˜ì—ˆì„ ë•Œ
+			System.out.println(dto.getUsername() + "ì˜ ì •ë³´ê°€ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			
 		}else {
-			//È¸¿øµî·Ï ½ÇÆĞ
-			System.out.println("È¸¿øµî·ÏÀÌ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+			//íšŒì›ë“±ë¡ ì‹¤íŒ¨
+			System.out.println("íšŒì›ë“±ë¡ì´ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 		
 		
@@ -144,30 +144,30 @@ public class MemberStart {
 	
 	
 	
-	//ÀüÃ¼ È¸¿ø ¸ñ·Ï ¼±ÅÃÇÏ±â
+	//ì „ì²´ íšŒì› ëª©ë¡ ì„ íƒí•˜ê¸°
 	public void memberAllList() {
-		//DAO¿¡ ±¸ÇöµÇ¾î ÀÖ´Â memberList() È£Ãâ
+		//DAOì— êµ¬í˜„ë˜ì–´ ìˆëŠ” memberList() í˜¸ì¶œ
 		MemberDAO dao = new MemberDAO();
 		
 		dao.memberList2();
 		
 		List<MemberDTO> list = dao.memberList();
 		
-		//  size() : °´Ã¼ÀÇ ¼ö
+		//  size() : ê°ì²´ì˜ ìˆ˜
 		for(int idx = 0; idx<list.size() ; idx++) {
-			//list¿¡¼­ index À§Ä¡ÀÇ °´Ã¼¸¦ ±¸ÇÏ¿©(dto) ÄÜ¼Ö Ãâ·Â
-			 MemberDTO dto= list.get(idx); //1¸íÀÇ È¸¿ø
-			 //Ãâ·Â
+			//listì—ì„œ index ìœ„ì¹˜ì˜ ê°ì²´ë¥¼ êµ¬í•˜ì—¬(dto) ì½˜ì†” ì¶œë ¥
+			 MemberDTO dto= list.get(idx); //1ëª…ì˜ íšŒì›
+			 //ì¶œë ¥
 			 oneMemberOutput(dto);
 			 
-			 //À§ÀÇ µÎ ÁÙ ´ëÃ¼ °¡´É
+			 //ìœ„ì˜ ë‘ ì¤„ ëŒ€ì²´ ê°€ëŠ¥
 			 //oneMemberOutput(list.get(idx));
 			 
 		}
 	}
-	//1¸íÀÇ È¸¿øÀ» Ãâ·ÂÇÏ´Â ¸Ş¼­µå
+	//1ëª…ì˜ íšŒì›ì„ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
 	public void oneMemberOutput(MemberDTO dto) {
-		//¹øÈ£, ÀÌ¸§, ¿¬¶ôÃ³, ÀÌ¸ŞÀÏ, »ı³â¿ùÀÏ, ¼ºº°, µî·ÏÀÏ
+		//ë²ˆí˜¸, ì´ë¦„, ì—°ë½ì²˜, ì´ë©”ì¼, ìƒë…„ì›”ì¼, ì„±ë³„, ë“±ë¡ì¼
 		System.out.printf("%5d %10s %20s %20s %10s %5s %20s\n", 
 				dto.getNum(), dto.getUsername(), dto.getTel(), dto.getEmail(),
 				dto.getBirth(), dto.getGender(), dto.getWritedate());
@@ -175,7 +175,7 @@ public class MemberStart {
 	
 	
 	public void menuOutput() {
-		System.out.print("[¸Ş´º]1.È¸¿ø¸ñ·Ï 2.È¸¿øµî·Ï 3.È¸¿ø¼öÁ¤ 4.È¸¿ø»èÁ¦ 5.Á¾·á?");
+		System.out.print("[ë©”ë‰´]1.íšŒì›ëª©ë¡ 2.íšŒì›ë“±ë¡ 3.íšŒì›ìˆ˜ì • 4.íšŒì›ì‚­ì œ 5.ì¢…ë£Œ?");
 	}
 	
 	public static void main(String[] args) {

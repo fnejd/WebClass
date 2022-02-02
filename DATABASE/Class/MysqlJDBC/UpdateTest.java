@@ -11,39 +11,39 @@ public class UpdateTest {
 	}
 
 	public void start() {
-		//»ç¿ø¹øÈ£¿Í ±Ş¿©¸¦ ÀÔ·Â¹Ş¾Æ ÇØ´ç »ç¿øÀÇ ±Ş¿©¸¦ ¼öÁ¤ÇÏ´Â ÇÁ·Î±×·¥
-		//µ¥ÀÌÅÍ ÀÔ·Â
+		//ì‚¬ì›ë²ˆí˜¸ì™€ ê¸‰ì—¬ë¥¼ ì…ë ¥ë°›ì•„ í•´ë‹¹ ì‚¬ì›ì˜ ê¸‰ì—¬ë¥¼ ìˆ˜ì •í•˜ëŠ” í”„ë¡œê·¸ë¨
+		//ë°ì´í„° ì…ë ¥
 		
-		System.out.print("¼öÁ¤ÇÒ »ç¿ø¹øÈ£ = ");
+		System.out.print("ìˆ˜ì •í•  ì‚¬ì›ë²ˆí˜¸ = ");
 		int empno = scan.nextInt();
-		System.out.println("¼öÁ¤ÇÒ ±Ş¿© = ");
+		System.out.println("ìˆ˜ì •í•  ê¸‰ì—¬ = ");
 		int sal = scan.nextInt();
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
-			//1. µå¶óÀÌºê ·Îµù
+			//1. ë“œë¼ì´ë¸Œ ë¡œë”©
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			//2. db ¿¬°á
+			//2. db ì—°ê²°
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/demo","root","root123");
 			//3.                             1               2
 			String sql = "update emp set sal=? where empno = ?";
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			//3-1. ÇÊ¿ä µ¥ÀÌÅÍ ¼ÂÆÃ
+			//3-1. í•„ìš” ë°ì´í„° ì…‹íŒ…
 			pstmt.setInt(1, sal);
 			pstmt.setInt(2, empno);
 			
 			
-			//4. ½ÇÇà : ¼öÁ¤ÇÑ ·¹ÄÚµåÀÇ ¼ö¸¦ ¸®ÅÏÇØÁØ´Ù. 
+			//4. ì‹¤í–‰ : ìˆ˜ì •í•œ ë ˆì½”ë“œì˜ ìˆ˜ë¥¼ ë¦¬í„´í•´ì¤€ë‹¤. 
 			int result = pstmt.executeUpdate();
 			
 			if(result>0) {
-				System.out.println(result + "°³ÀÇ ·¹ÄÚµå°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+				System.out.println(result + "ê°œì˜ ë ˆì½”ë“œê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}else {
-				System.out.println("¼öÁ¤ÇÑ ·¹ÄÚµå°¡ ¾ø½À´Ï´Ù.");
+				System.out.println("ìˆ˜ì •í•œ ë ˆì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
 			

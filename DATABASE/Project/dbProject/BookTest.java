@@ -21,21 +21,21 @@ public class BookTest {
 			int process = Integer.parseInt(sc.nextLine());
 			
 			if(process == 1) {
-				//µµ¼­ Á¤º¸ ÀÔ·Â
+				//ë„ì„œ ì •ë³´ ì…ë ¥
 				BookDTO dto = new BookDTO();
 				BookDAO dao = new BookDAO();
 				dao.insertBook(dto);
 				
 			}else if(process ==2) {
-				//µµ¼­ Á¤º¸ Ãâ·Â
+				//ë„ì„œ ì •ë³´ ì¶œë ¥
 				BookDAO dao = new BookDAO();
 				dao.SelectBook();
 				
 			}else if(process ==3) {
-				//ÇÁ·Î±×·¥ Á¾·á
+				//í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 				System.exit(0);
 			}else {
-				System.out.println("¼öÇàÇÒ ÀÛ¾÷À» Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+				System.out.println("ìˆ˜í–‰í•  ì‘ì—…ì„ ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 				
 			}	
 			
@@ -45,7 +45,7 @@ public class BookTest {
 	
 	public void printField() {
 		
-		System.out.println("1.µµ¼­ Á¤º¸ ÀÔ·Â 2. µµ¼­ Á¤º¸ Ãâ·Â 3. Á¾·á? ");
+		System.out.println("1.ë„ì„œ ì •ë³´ ì…ë ¥ 2. ë„ì„œ ì •ë³´ ì¶œë ¥ 3. ì¢…ë£Œ? ");
 		
 	}
 

@@ -12,42 +12,42 @@ public class InsertTest {
 	}
 	
 	public void empInsert() {
-		//»ç¿ø ¹øÈ£, ÀÌ¸§, ±Ş¿©, ÀÔ»çÀÏÀ» ·¹ÄÚµå Ãß°¡ÇÏ±â
+		//ì‚¬ì› ë²ˆí˜¸, ì´ë¦„, ê¸‰ì—¬, ì…ì‚¬ì¼ì„ ë ˆì½”ë“œ ì¶”ê°€í•˜ê¸°
 		
 		
 		try {
-			// 1. µå¶óÀÌºê ·Îµù
+			// 1. ë“œë¼ì´ë¸Œ ë¡œë”©
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			//2. DB ¿¬°á                                  ¼­¹ö ÁÖ¼Ò/dbname
+			//2. DB ì—°ê²°                                  ì„œë²„ ì£¼ì†Œ/dbname
 			con = DriverManager.getConnection("jdbc:mysql://localhost/demo","root","root123");
 			
 			
-			//3. preparedStatement°´Ã¼ »ı¼º : Äõ¸®¹® ÀÌ¿ëÇÏ¿©
-			//»ç¿ø¹øÈ£ : 5555, ÀÌ¸§ : kim, ±Ş¿©: 4500, ÀÔ»çÀÏ : ÇöÀç ³¯Â¥¿Í ½Ã°£À¸·Î ¼³Á¤ // 1,2,3  ¹°À½Ç¥ ¼ø¼­´ë·Î ¹øÈ£°¡ ¸Å°ÜÁø´Ù.
+			//3. preparedStatementê°ì²´ ìƒì„± : ì¿¼ë¦¬ë¬¸ ì´ìš©í•˜ì—¬
+			//ì‚¬ì›ë²ˆí˜¸ : 5555, ì´ë¦„ : kim, ê¸‰ì—¬: 4500, ì…ì‚¬ì¼ : í˜„ì¬ ë‚ ì§œì™€ ì‹œê°„ìœ¼ë¡œ ì„¤ì • // 1,2,3  ë¬¼ìŒí‘œ ìˆœì„œëŒ€ë¡œ ë²ˆí˜¸ê°€ ë§¤ê²¨ì§„ë‹¤.
 			String sql = "insert into emp(empno, ename, sal, hiredate) values (?,?,?, now())";
 			
 			pstmt = con.prepareStatement(sql);
 			
-			//?¿¡ °ªÀ» ¼ÂÆÃÇÑ´Ù.
-			//preparedStatement ¾È¿¡ ÀÖ´Â ¸Ş¼­µå
+			//?ì— ê°’ì„ ì…‹íŒ…í•œë‹¤.
+			//preparedStatement ì•ˆì— ìˆëŠ” ë©”ì„œë“œ
 			
-			//1¹øÂ° ?¿¡ 5555¼¼ÆÃ
+			//1ë²ˆì§¸ ?ì— 5555ì„¸íŒ…
 			pstmt.setInt(1, 5555);
 			pstmt.setString(2, "kim");
 			pstmt.setDouble(3,3500);
 			
-			//4.½ÇÇà
-			//insert, update, deleteÀÏ °æ¿ì¿¡´Â executeUpdate() ½ÇÇà
-			//insertµÈ ·¹ÄÚµå ¼ö¸¦ ¹İÈ¯ÇØ ÁØ´Ù.
-			//Äõ¸®¹® ½ÇÇàÇØ Ãß°¡µÈ ·¹ÄÚµåÀÇ ¼ö¸¦ ¹İÈ¯ÇØÁØ´Ù. 
+			//4.ì‹¤í–‰
+			//insert, update, deleteì¼ ê²½ìš°ì—ëŠ” executeUpdate() ì‹¤í–‰
+			//insertëœ ë ˆì½”ë“œ ìˆ˜ë¥¼ ë°˜í™˜í•´ ì¤€ë‹¤.
+			//ì¿¼ë¦¬ë¬¸ ì‹¤í–‰í•´ ì¶”ê°€ëœ ë ˆì½”ë“œì˜ ìˆ˜ë¥¼ ë°˜í™˜í•´ì¤€ë‹¤. 
 			int cnt = pstmt.executeUpdate();
 			
 			if(cnt>0) {
-				System.out.println("·¹ÄÚµå°¡ Ãß°¡ µÇ¾ú½À´Ï´Ù. ");
+				System.out.println("ë ˆì½”ë“œê°€ ì¶”ê°€ ë˜ì—ˆìŠµë‹ˆë‹¤. ");
 				
 			}else {
-				System.out.println("·¹ÄÚµå Ãß°¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+				System.out.println("ë ˆì½”ë“œ ì¶”ê°€ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			
 			
@@ -58,7 +58,7 @@ public class InsertTest {
 			e.printStackTrace();
 			
 		}finally {
-			//DB Á¾·á
+			//DB ì¢…ë£Œ
 			try {
 				if(pstmt != null) { pstmt.close();}
 				if(con != null) { con.close(); }

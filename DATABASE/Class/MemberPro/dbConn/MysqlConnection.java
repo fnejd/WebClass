@@ -8,33 +8,33 @@ import java.sql.ResultSet;
 public class MysqlConnection {
 
 	
-	//¸â¹öº¯¼ö ¼±¾ğ, °´Ã¼ »ı¼º
+	//ë©¤ë²„ë³€ìˆ˜ ì„ ì–¸, ê°ì²´ ìƒì„±
 	
-	//¸â¹ö¿µ¿ª¿¡ ½ÇÇà¹® »ç¿ëÇÒ ¼ö ÀÖ°Ô ÇÏ´Â Å°¿öµå - static
+	//ë©¤ë²„ì˜ì—­ì— ì‹¤í–‰ë¬¸ ì‚¬ìš©í•  ìˆ˜ ìˆê²Œ í•˜ëŠ” í‚¤ì›Œë“œ - static
 	
-	//1. µå¶óÀÌºê ·Îµù - ÀÚµ¿À¸·Î ½ÇÇàµÇ¾ß ÇÏ±â ¶§¹®¿¡ static¿¡ ³Ö¾ú´Ù. 
-	static { //static {} ´Â ½ÇÇà¹®À» ±â¼úÇÒ ¼ö ÀÖ´Â ¿µ¿ªÀÌ µÈ´Ù.
-		//È£Ãâ ¾ÈÇØµµ ¾Ë¾Æ¼­ ½ÇÇàµÇ´Â °÷
-		//½ÇÇà¹®, ¸â¹ö¿µ¿ª
+	//1. ë“œë¼ì´ë¸Œ ë¡œë”© - ìë™ìœ¼ë¡œ ì‹¤í–‰ë˜ì•¼ í•˜ê¸° ë•Œë¬¸ì— staticì— ë„£ì—ˆë‹¤. 
+	static { //static {} ëŠ” ì‹¤í–‰ë¬¸ì„ ê¸°ìˆ í•  ìˆ˜ ìˆëŠ” ì˜ì—­ì´ ëœë‹¤.
+		//í˜¸ì¶œ ì•ˆí•´ë„ ì•Œì•„ì„œ ì‹¤í–‰ë˜ëŠ” ê³³
+		//ì‹¤í–‰ë¬¸, ë©¤ë²„ì˜ì—­
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			
 		}catch(Exception e) {
-			System.out.println("µå¶óÀÌºê·Îµù ¿¹¿Ü ¹ß»ı!!!");
+			System.out.println("ë“œë¼ì´ë¸Œë¡œë”© ì˜ˆì™¸ ë°œìƒ!!!");
 			
 		}
 		
 	}
 	
-	//¸â¹ö¿µ¿ª¿¡ º¯¼ö¸¦ ¼±¾ğÇÑ´Ù.
-	//»ó¼ÓÀ» ¹ŞÁö ¾Ê´Â ÀÌ»ó ¸ø »ç¿ëÇÏ°Ô protected·Î Á¢±Ù Á¦¾î ¼³Á¤
+	//ë©¤ë²„ì˜ì—­ì— ë³€ìˆ˜ë¥¼ ì„ ì–¸í•œë‹¤.
+	//ìƒì†ì„ ë°›ì§€ ì•ŠëŠ” ì´ìƒ ëª» ì‚¬ìš©í•˜ê²Œ protectedë¡œ ì ‘ê·¼ ì œì–´ ì„¤ì •
 	protected Connection conn = null;
 	protected PreparedStatement pstmt = null;
 	protected ResultSet rs = null;
 	
-	//2. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¸Ş¼Òµå
+	//2. ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ë©”ì†Œë“œ
 	public void getConn() {
 		String url = "jdbc:mysql://localhost/mydb";
 		String id = "root";
@@ -43,12 +43,12 @@ public class MysqlConnection {
 		try {
 			conn = DriverManager.getConnection(url,id,password);
 		}catch(Exception e) {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¿¹¿Ü ¹ß»ı!!!");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì˜ˆì™¸ ë°œìƒ!!!");
 			
 		}
 		
 	}
-	//3 µ¥ÀÌÅÍº£ÀÌ½º Á¾·á ¸Ş¼Òµå
+	//3 ë°ì´í„°ë² ì´ìŠ¤ ì¢…ë£Œ ë©”ì†Œë“œ
 	public void dbClose() {
 		try {
 			if(rs != null) rs.close();
@@ -56,7 +56,7 @@ public class MysqlConnection {
 			if(conn != null) conn.close();
 			
 		}catch(Exception e) {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ´İ±â ¿¹¿Ü ¹ß»ı");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ë‹«ê¸° ì˜ˆì™¸ ë°œìƒ");
 		}
 	}
 	

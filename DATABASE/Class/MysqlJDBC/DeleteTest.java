@@ -15,8 +15,8 @@ public class DeleteTest {
 	
 	public void start() {
 		try {
-			//»ç¿ø¹øÈ£¸¦ ÀÔ·Â¹Ş¾Æ ÀÔ·Â ¹ŞÀº »ç¿øÀ» »èÁ¦ÇÏ¶ó. 
-			System.out.println("»èÁ¦ÇÒ »ç¿ø¹øÈ£ -> ");
+			//ì‚¬ì›ë²ˆí˜¸ë¥¼ ì…ë ¥ë°›ì•„ ì…ë ¥ ë°›ì€ ì‚¬ì›ì„ ì‚­ì œí•˜ë¼. 
+			System.out.println("ì‚­ì œí•  ì‚¬ì›ë²ˆí˜¸ -> ");
 			int no = Integer.parseInt(scan.nextLine());
 			
 			//1. 
@@ -32,10 +32,10 @@ public class DeleteTest {
 			int cnt = pstmt.executeUpdate();
 			
 			if(cnt >0) {
-				System.out.println(cnt + "°³ÀÇ ·¹ÄÚµå°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.");
+				System.out.println(cnt + "ê°œì˜ ë ˆì½”ë“œê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 				
 			}else {
-				System.out.println("·¹ÄÚµå »èÁ¦ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+				System.out.println("ë ˆì½”ë“œ ì‚­ì œ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			
 			

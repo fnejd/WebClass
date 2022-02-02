@@ -8,18 +8,18 @@ import dto.MemberDTO;
 
 public class MemberDAO extends MysqlConnection {
 	
-	//È¸¿ø ¼±ÅÃ
+	//íšŒì› ì„ íƒ
 	public List<MemberDTO> memberList() {
 		
-		//dto °´Ã¼¸¦ ´ãÀ» ArrayList °´Ã¼¸¦ »ı¼º
+		//dto ê°ì²´ë¥¼ ë‹´ì„ ArrayList ê°ì²´ë¥¼ ìƒì„±
 		List<MemberDTO> list = new ArrayList<MemberDTO>();
 		
 		try {
 		
-			getConn(); //DB¿¬°á 
+			getConn(); //DBì—°ê²° 
 			
 			
-			//Äõ¸®¹® ¸¸µé±â 
+			//ì¿¼ë¦¬ë¬¸ ë§Œë“¤ê¸° 
 			//select
 			String sql = "select num, username,tel,email,birth, gender,writedate"
 					+ " from member order by num";
@@ -31,8 +31,8 @@ public class MemberDAO extends MysqlConnection {
 			 rs = pstmt.executeQuery();
 			 
 			 
-			//dto °´Ã¼¸¦ »ç¶÷ ¼ö ¸¸Å­ ¸¸µé¾î¼­ ³Ö´Â´Ù.
-			//dto °´Ã¼¸¦ ÄÃ·º¼Ç¿¡ ´ãÀ» °ÍÀÌ´Ù.
+			//dto ê°ì²´ë¥¼ ì‚¬ëŒ ìˆ˜ ë§Œí¼ ë§Œë“¤ì–´ì„œ ë„£ëŠ”ë‹¤.
+			//dto ê°ì²´ë¥¼ ì»¬ë ‰ì…˜ì— ë‹´ì„ ê²ƒì´ë‹¤.
 			 while(rs.next()) {
 				 MemberDTO dto = new MemberDTO();
 				 dto.setNum(rs.getInt(1));
@@ -47,11 +47,11 @@ public class MemberDAO extends MysqlConnection {
 			 }
 			 
 		}catch(Exception e) {
-			System.out.println("È¸¿ø¼±ÅÃ ¿¹¿Ü ¹ß»ı!!!");
+			System.out.println("íšŒì›ì„ íƒ ì˜ˆì™¸ ë°œìƒ!!!");
 			e.printStackTrace();
 			
 		}finally {
-			//µ¥ÀÌÅÍº£ÀÌ½º ´İ±â
+			//ë°ì´í„°ë² ì´ìŠ¤ ë‹«ê¸°
 			dbClose();
 		}
 		
@@ -60,9 +60,9 @@ public class MemberDAO extends MysqlConnection {
 		
 		
 	}
-	//È¸¿ø µî·Ï
+	//íšŒì› ë“±ë¡
 	public int memberInsert(MemberDTO dto) {
-		//°á°ú¸¦ ¸®ÅÏ½ÃÅ³ º¯¼ö
+		//ê²°ê³¼ë¥¼ ë¦¬í„´ì‹œí‚¬ ë³€ìˆ˜
 		int result = 0;
 		
 		try {
@@ -71,17 +71,17 @@ public class MemberDAO extends MysqlConnection {
 			String sql = "insert into member(username, tel, email, birth, gender) values(?,?,?,?,?)";
 			
 			pstmt = conn.prepareStatement(sql);
-			//°ªÀ» ¼ÂÆÃ
+			//ê°’ì„ ì…‹íŒ…
 			pstmt.setString(1, dto.getUsername());
 			pstmt.setString(2, dto.getTel());
 			pstmt.setString(3, dto.getEmail());
 			pstmt.setString(4, dto.getBirth());
 			pstmt.setString(5, dto.getGender());
 			
-			//Ãß°¡µÈ ·¹ÄÚµåÀÇ ¼ö¸¦ ¹İÈ¯
+			//ì¶”ê°€ëœ ë ˆì½”ë“œì˜ ìˆ˜ë¥¼ ë°˜í™˜
 			result = pstmt.executeUpdate();
 		}catch(Exception e) {
-			System.out.println("È¸¿øµî·Ï¿¹¿Ü ¹ß»ı....");
+			System.out.println("íšŒì›ë“±ë¡ì˜ˆì™¸ ë°œìƒ....");
 			e.printStackTrace();
 			
 			
@@ -94,13 +94,13 @@ public class MemberDAO extends MysqlConnection {
 	}
 	
 	
-	//È¸¿ø ¼öÁ¤
+	//íšŒì› ìˆ˜ì •
 	public int memberUpdate(String que,MemberDTO dto) {
 		
 		int result = 0;
 		try {
 			
-			//DB¿¬°á
+			//DBì—°ê²°
 			getConn();
 			
 			String sql = "update member set ";
@@ -117,7 +117,7 @@ public class MemberDAO extends MysqlConnection {
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			//¿¬¶ôÃ³, ÀÌ¸ŞÀÏ ÁÖ¼Ò setting
+			//ì—°ë½ì²˜, ì´ë©”ì¼ ì£¼ì†Œ setting
 			if(que.equals("1")) {	
 				pstmt.setString(1, dto.getTel());
 				
@@ -132,7 +132,7 @@ public class MemberDAO extends MysqlConnection {
 			
 		}catch(Exception e) {
 			
-			System.out.println("È¸¿ø¼öÁ¤ ¿¹¿Ü ¹ß»ı...");
+			System.out.println("íšŒì›ìˆ˜ì • ì˜ˆì™¸ ë°œìƒ...");
 			e.printStackTrace();
 			
 		}finally {
@@ -142,7 +142,7 @@ public class MemberDAO extends MysqlConnection {
 		
 		return result;
 	}
-	//È¸¿ø »èÁ¦
+	//íšŒì› ì‚­ì œ
 	public int memberDelete(int num) {
 		
 		int result = 0;
@@ -158,7 +158,7 @@ public class MemberDAO extends MysqlConnection {
 			
 			
 		}catch(Exception e) {
-			System.out.println("È¸¿ø»èÁ¦ ¿¹¿Ü¹ß»ı...");
+			System.out.println("íšŒì›ì‚­ì œ ì˜ˆì™¸ë°œìƒ...");
 			e.printStackTrace();
 			
 		}finally {
@@ -168,7 +168,7 @@ public class MemberDAO extends MysqlConnection {
 		return result;
 	}
 	
-	//È¸¿øÀüÃ¼ ¸ñ·Ï
+	//íšŒì›ì „ì²´ ëª©ë¡
 	public void memberList2(){
 		try {
 			getConn();

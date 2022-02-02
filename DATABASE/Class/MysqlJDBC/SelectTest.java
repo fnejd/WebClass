@@ -12,57 +12,57 @@ public class SelectTest {
 	}
 
 	public void start() {
-		//µ¥ÀÌÅÍ º£ÀÌ½º ¿¬µ¿
-		//1. jdbc µå¶óÀÌºê¸¦ jvm¿¡ °´Ã¼¸¦ »ı¼ºÇÏ¿© µî·ÏÇÑ´Ù.
-		//°æ·Î¸¦ ¾È¿¡ ³Ö¾îÁØ´Ù. ÀÌ°Í¸¸ ÇØÁÖ¸é µ¥ÀÌÅÍº£ÀÌ½º ¾µ¼ö ÀÖ´Â µå¶óÀÌ¹ö°¡ µî·ÏµÈ´Ù.
+		//ë°ì´í„° ë² ì´ìŠ¤ ì—°ë™
+		//1. jdbc ë“œë¼ì´ë¸Œë¥¼ jvmì— ê°ì²´ë¥¼ ìƒì„±í•˜ì—¬ ë“±ë¡í•œë‹¤.
+		//ê²½ë¡œë¥¼ ì•ˆì— ë„£ì–´ì¤€ë‹¤. ì´ê²ƒë§Œ í•´ì£¼ë©´ ë°ì´í„°ë² ì´ìŠ¤ ì“¸ìˆ˜ ìˆëŠ” ë“œë¼ì´ë²„ê°€ ë“±ë¡ëœë‹¤.
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		}catch(ClassNotFoundException cnfe) {
-			System.out.println("µå¶óÀÌºê ·Îµù ½ÇÆĞ!");
+			System.out.println("ë“œë¼ì´ë¸Œ ë¡œë”© ì‹¤íŒ¨!");
 			cnfe.printStackTrace();
 		}
 		
-		//º¯¼ö ¼±¾ğ 
+		//ë³€ìˆ˜ ì„ ì–¸ 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
-		//2. DB¿¬°á
-		//DriverManagerÅ¬·¡½ºÀÇ getConnection() ¸Ş¼Òµå¸¦ ½ÇÇàÇÏ¸é
-		//µ¥ÀÌÅÍº£ÀÌ½º¸¦ ¿¬°áÇÏ¿© Connection °´Ã¼¸¦ ¸®ÅÏÇØÁØ´Ù. 
-		//	                            ¼­¹öip, db¸í
-		String url = "jdbc:mysql://127.0.0.1/demo"; //mysql¼­¹ö°¡ ÀÖ´Â ÁÖ¼Ò 127.0.0.1
+		//2. DBì—°ê²°
+		//DriverManagerí´ë˜ìŠ¤ì˜ getConnection() ë©”ì†Œë“œë¥¼ ì‹¤í–‰í•˜ë©´
+		//ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ì—°ê²°í•˜ì—¬ Connection ê°ì²´ë¥¼ ë¦¬í„´í•´ì¤€ë‹¤. 
+		//	                            ì„œë²„ip, dbëª…
+		String url = "jdbc:mysql://127.0.0.1/demo"; //mysqlì„œë²„ê°€ ìˆëŠ” ì£¼ì†Œ 127.0.0.1
 		
 		
-		//¸Å°³º¯¼ö ( ¼­¹öÁÖ¼Ò, °èÁ¤, ºñ¹Ğ¹øÈ£) 
-		//Connection¿¡ ¹İÈ¯
+		//ë§¤ê°œë³€ìˆ˜ ( ì„œë²„ì£¼ì†Œ, ê³„ì •, ë¹„ë°€ë²ˆí˜¸) 
+		//Connectionì— ë°˜í™˜
 		conn = DriverManager.getConnection(url,"root","root123");
 		
 		
 		
-		//Äõ¸®¹® - ·¹ÄÚµå ¼±ÅÃ(select)
-		//Äõ¸®¹® ¹®ÀÚ¿­·Î ¸¸µç´Ù.
+		//ì¿¼ë¦¬ë¬¸ - ë ˆì½”ë“œ ì„ íƒ(select)
+		//ì¿¼ë¦¬ë¬¸ ë¬¸ìì—´ë¡œ ë§Œë“ ë‹¤.
 		 String sql = "select empno, ename, hiredate, sal from emp order by ename asc";
 		
-		//3. PreparedStatement °´Ã¼¸¦ »ı¼º
+		//3. PreparedStatement ê°ì²´ë¥¼ ìƒì„±
 		 pstmt= conn.prepareStatement(sql);
 		
 		 
-		 //4. pstmt¸¦ ½ÇÇàÇÑ´Ù. 
+		 //4. pstmtë¥¼ ì‹¤í–‰í•œë‹¤. 
 		 rs = pstmt.executeQuery();
 		 
-		 //Ã¹¹øÂ° ÁÙÀÇ µ¥ÀÌÅÍ¸¦ °¡Á®¿Í¼­ ·¹ÄÚµå ¼ö¸¸Å­ ¹İº¹ ½ÃÅ³ °ÍÀÌ´Ù.
-		 //Æ÷ÀÎÆ®¸¦ Ã¹¹øÂ° ÁÙ·Î ¿Å°ÜÁØ´Ù.
-		 //rs¿¡ Æ÷ÀÎÆ® ÀÌµ¿½ÃÅ°´Â ¸Ş¼­µå°¡ Á¸ÀçÇÑ´Ù. 
-		 //first() Æ÷ÀÎÆ®¸¦ °¡Àå ¾ÕÀ¸·Î º¸³½´Ù. 
-		 //Last() Á¦ÀÏ ¸¶Áö¸·À¸·Î Æ÷ÀÎÆ®¸¦ º¸³½´Ù.
-		 //next() Æ÷ÀÎÆ®¸¦ ÇÑÄ­ ¾¿ µÚ·Î ÀÌµ¿½ÃÅ²´Ù. 
-		 //previous() ÀÌÀü Æ÷ÀÎÆ®·Î 
+		 //ì²«ë²ˆì§¸ ì¤„ì˜ ë°ì´í„°ë¥¼ ê°€ì ¸ì™€ì„œ ë ˆì½”ë“œ ìˆ˜ë§Œí¼ ë°˜ë³µ ì‹œí‚¬ ê²ƒì´ë‹¤.
+		 //í¬ì¸íŠ¸ë¥¼ ì²«ë²ˆì§¸ ì¤„ë¡œ ì˜®ê²¨ì¤€ë‹¤.
+		 //rsì— í¬ì¸íŠ¸ ì´ë™ì‹œí‚¤ëŠ” ë©”ì„œë“œê°€ ì¡´ì¬í•œë‹¤. 
+		 //first() í¬ì¸íŠ¸ë¥¼ ê°€ì¥ ì•ìœ¼ë¡œ ë³´ë‚¸ë‹¤. 
+		 //Last() ì œì¼ ë§ˆì§€ë§‰ìœ¼ë¡œ í¬ì¸íŠ¸ë¥¼ ë³´ë‚¸ë‹¤.
+		 //next() í¬ì¸íŠ¸ë¥¼ í•œì¹¸ ì”© ë’¤ë¡œ ì´ë™ì‹œí‚¨ë‹¤. 
+		 //previous() ì´ì „ í¬ì¸íŠ¸ë¡œ 
 		 
 		 while(rs.next()) {
-			 int empno = rs.getInt(1); //rs.getInt("empno"); µµ ¹æ¹ıÀÌÁö¸¸ Àß ¾È¾´´Ù. 
-			 // empno°¡ 1, enameÀÌ 2
+			 int empno = rs.getInt(1); //rs.getInt("empno"); ë„ ë°©ë²•ì´ì§€ë§Œ ì˜ ì•ˆì“´ë‹¤. 
+			 // empnoê°€ 1, enameì´ 2
 			 
 			 String ename = rs.getString(2); //rs.getString("ename");
 			 String hiredate= rs.getString(3);
@@ -73,11 +73,11 @@ public class SelectTest {
 		 
 		 
 		}catch(SQLException se) {
-			System.out.println("DB ¿¬°á ¿¡·¯ ¹ß»ı");
+			System.out.println("DB ì—°ê²° ì—ëŸ¬ ë°œìƒ");
 			se.printStackTrace();
 		}finally {
-			//¿¬°áÁ¾·á
-			//¸¶Áö¸·¿¡ »ı¼ºµÈ °´Ã¼ºÎÅÍ ¸ÕÀú Á¾·á½ÃÅ²´Ù (¿ª¼øÀ¸·Î)
+			//ì—°ê²°ì¢…ë£Œ
+			//ë§ˆì§€ë§‰ì— ìƒì„±ëœ ê°ì²´ë¶€í„° ë¨¼ì € ì¢…ë£Œì‹œí‚¨ë‹¤ (ì—­ìˆœìœ¼ë¡œ)
 			
 			try{
 				if(rs != null) {rs.close();}
