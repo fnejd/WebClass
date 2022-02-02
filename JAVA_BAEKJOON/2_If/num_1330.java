@@ -5,8 +5,8 @@ public class num_1330 {
 	public static void main(String[] args) {
 		
 		
-		//µÎ ¼ö ºñ±³ÇÏ±â
-		//µÎ Á¤¼ö a,b ºñ±³ 
+		//ë‘ ìˆ˜ ë¹„êµí•˜ê¸°
+		//ë‘ ì •ìˆ˜ a,b ë¹„êµ 
 		Scanner sc = new Scanner(System.in);
 		
 		int a,b;
@@ -15,15 +15,17 @@ public class num_1330 {
 		b = sc.nextInt();
 		
 		if(a>b) {  
-			// a°¡ bº¸´Ù Å©¸é '>' Ãâ·Â
+			// aê°€ bë³´ë‹¤ í¬ë©´ '>' ì¶œë ¥
 			System.out.println(">");
 		}else if(a<b) {    
-			// a°¡ bº¸´Ù ÀÛÀ¸¸é '<' Ãâ·Â
+			// aê°€ bë³´ë‹¤ ìž‘ìœ¼ë©´ '<' ì¶œë ¥
 			System.out.println("<");
 		}else {
-			// a¿Í b°¡ °°À¸¸é '==' Ãâ·Â
+			// aì™€ bê°€ ê°™ìœ¼ë©´ '==' ì¶œë ¥
 			System.out.println("==");
 		}
+		
+		sc.close();
 		
 		
 	}

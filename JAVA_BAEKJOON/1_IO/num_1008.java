@@ -5,8 +5,8 @@ public class num_1008 {
 		
 		//A/B
 		
-		//µÎ Á¤¼ö A¿Í B¸¦ ÀÔ·Â¹Ş°í A/B¸¦ Ãâ·Â
-		//»ó´ë¿ÀÂ÷°¡ 10 ^(-9) ÀÌÇÏ
+		//ë‘ ì •ìˆ˜ Aì™€ Bë¥¼ ì…ë ¥ë°›ê³  A/Bë¥¼ ì¶œë ¥
+		//ìƒëŒ€ì˜¤ì°¨ê°€ 10 ^(-9) ì´í•˜
 		
 		Scanner sc = new Scanner(System.in);
 		int a ,b;
@@ -14,6 +14,8 @@ public class num_1008 {
 		b = sc.nextInt();
 		
 		System.out.println((double)a/b);
+		
+		sc.close();
 	}
 
 }

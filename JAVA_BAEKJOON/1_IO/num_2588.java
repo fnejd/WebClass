@@ -4,41 +4,43 @@ public class num_2588 {
 	public static void main(String[] args) {
 		
 		
-		//°ö¼À
+		//ê³±ì…ˆ
 		
-		//¼¼ÀÚ¸® ¼ö a, b ÀÔ·Â
+		//ì„¸ìë¦¬ ìˆ˜ a, b ì…ë ¥
 		Scanner sc = new Scanner(System.in);
 		int a , b;
 		
 		
-		//sum : (a * b) ¿¬»ê °á°ú °ª ÀúÀå
-		//tmp : a * (bÀÇ °¢ ÀÚ¸® ¼ö) ÀúÀå  
+		//sum : (a * b) ì—°ì‚° ê²°ê³¼ ê°’ ì €ì¥
+		//tmp : a * (bì˜ ê° ìë¦¬ ìˆ˜) ì €ì¥  
 		int sum = 0, tmp = 0;
 		
 		a = sc.nextInt();
 		b = sc.nextInt();
 		
-		// a * (bÀÇ ÀÏÀÇ ÀÚ¸® ¼ö)
+		// a * (bì˜ ì¼ì˜ ìë¦¬ ìˆ˜)
 		tmp = a * (b%10);
 		sum += tmp;
 		b = b/10;
 		System.out.println(tmp);
 		
-		// a * (bÀÇ ½ÊÀÇ ÀÚ¸® ¼ö)
+		// a * (bì˜ ì‹­ì˜ ìë¦¬ ìˆ˜)
 		tmp = a * (b%10);
 		sum += tmp *10;
 		b = b/10;
 		System.out.println(tmp);
 		
 		
-		//a * (bÀÇ ¹éÀÇ ÀÚ¸® ¼ö)
+		//a * (bì˜ ë°±ì˜ ìë¦¬ ìˆ˜)
 		tmp = a * (b%10);
 		sum += tmp *100;
 		System.out.println(tmp);
 		
 		
-		//a * b °á°ú 
+		//a * b ê²°ê³¼ 
 		System.out.println(sum);
+		
+		sc.close();
 		
 		
 		

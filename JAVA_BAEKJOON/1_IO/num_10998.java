@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class num_10998 {
 	public static void main(String[] args) {
 		
-		//A¡¿B
+		//AÃ—B
 		
-		//µÎ Á¤¼ö A¿Í B¸¦ ÀÔ·Â¹Ş°í A¡¿B¸¦ Ãâ·Â
+		//ë‘ ì •ìˆ˜ Aì™€ Bë¥¼ ì…ë ¥ë°›ê³  AÃ—Bë¥¼ ì¶œë ¥
 		Scanner sc = new Scanner(System.in);
 		
 		int a, b;
@@ -13,6 +13,8 @@ public class num_10998 {
 		b = sc.nextInt();
 		
 		System.out.println(a*b);
+		
+		sc.close();
 		
 	}
 

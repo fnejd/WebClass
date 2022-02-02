@@ -5,14 +5,14 @@ public class num_1000 {
 		
 		//A+B
 		
-		//Á¤¼ö A¿Í B¸¦ ÀÔ·Â¹Þ°í A+B¸¦ Ãâ·Â
-		
+		//ì •ìˆ˜ Aì™€ Bë¥¼ ìž…ë ¥ë°›ê³  A+Bë¥¼ ì¶œë ¥
+				
 		Scanner sc = new Scanner(System.in);
 		int a, b;
 		a = sc.nextInt();
 		b = sc.nextInt();
 		System.out.println(a+b);
-		
+				
 		sc.close();
 		
 	}

@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class num_14681 {
 	public static void main(String[] args) {
 		
-		//»çºÐ¸é °í¸£±â
+		//ì‚¬ë¶„ë©´ ê³ ë¥´ê¸°
 		
 		Scanner sc = new Scanner(System.in);
 		int x,y;
 		
-		//ÁÂÇ¥ ÀÔ·Â ¹Þ±â
+		//ì¢Œí‘œ ìž…ë ¥ ë°›ê¸°
 		x = sc.nextInt();
 		y = sc.nextInt();
 		
 		if(x>0) {
-			//x >0 ÀÌ¸é 1 ¶Ç´Â 4»çºÐ¸é 
+			//x >0 ì´ë©´ 1 ë˜ëŠ” 4ì‚¬ë¶„ë©´ 
 			if(y>0) {
 				//x>0 && y>0 
 				System.out.println(1);
@@ -22,7 +22,7 @@ public class num_14681 {
 				System.out.println(4);
 			}
 		}else {
-			//x <0 ÀÌ¸é 2 ¶Ç´Â 3»çºÐ¸é 
+			//x <0 ì´ë©´ 2 ë˜ëŠ” 3ì‚¬ë¶„ë©´ 
 			if(y>0) {
 				//x<0 && y>0
 				System.out.println(2);
@@ -31,6 +31,8 @@ public class num_14681 {
 				System.out.println(3);
 			}		
 		}
+		
+		sc.close();
 		
 	}
 

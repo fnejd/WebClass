@@ -1,12 +1,11 @@
-
 public class num_10718{
 	public static void main(String[] args) {
 		
 		//We love kriii
-		//°­ÇÑÄ£±¸ ´ëÇÑÀ°±º ÇÑ ÁÙ¿¡ ÇÑ¹ø¾¿ ÃÑ µÎÁÙ Ãâ·Â
+		//ê°•í•œì¹œêµ¬ ëŒ€í•œìœ¡êµ° í•œ ì¤„ì— í•œë²ˆì”© ì´ ë‘ì¤„ ì¶œë ¥
 		
-		System.out.println("°­ÇÑÄ£±¸ ´ëÇÑÀ°±º");
-		System.out.println("°­ÇÑÄ£±¸ ´ëÇÑÀ°±º");
+		System.out.println("ê°•í•œì¹œêµ¬ ëŒ€í•œìœ¡êµ°");
+		System.out.println("ê°•í•œì¹œêµ¬ ëŒ€í•œìœ¡êµ°");
 	}
 
 }

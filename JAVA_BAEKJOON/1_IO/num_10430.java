@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class num_10430 {
 	public static void main(String[] args) {
 		
-		//³ª¸ÓÁö
-		
+		//ë‚˜ë¨¸ì§€
 		
 		Scanner sc = new Scanner(System.in);
 		int a,b,c;
@@ -12,17 +11,19 @@ public class num_10430 {
 		b = sc.nextInt();
 		c = sc.nextInt();
 		
-		//(A+B)%C Ãâ·Â
+		//(A+B)%C ì¶œë ¥
 		System.out.println((a + b) %c);
 		
-		//((A%C) + (B%C))%C Ãâ·Â
+		//((A%C) + (B%C))%C ì¶œë ¥
 		System.out.println((a%c + b%c)%c);
 		
-		//(A¡¿B)%C Ãâ·Â
+		//(AÃ—B)%C ì¶œë ¥
 		System.out.println((a * b) %c);
 		
-		//((A%C) ¡¿ (B%C))%C Ãâ·Â
+		//((A%C) Ã— (B%C))%C ì¶œë ¥
 		System.out.println(((a%c)*(b%c))%c);
+		
+		sc.close();
 		
 	}
 

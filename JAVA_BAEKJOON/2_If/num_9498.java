@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class num_9498 {
 	public static void main(String[] args) {
 		
-		//½ÃÇè ¼ºÀû
-		//¼ºÀû ÀÔ·Â ¹Þ¾Æ 90~100Á¡ -> A , 80~89Á¡ -> B, 70~79Á¡ ->C , 60 ~69Á¡-> D, ³ª¸ÓÁö F Ãâ·Â
+		//ì‹œí—˜ ì„±ì 
+				//ì„±ì  ìž…ë ¥ ë°›ì•„ 90~100ì  -> A , 80~89ì  -> B, 70~79ì  ->C , 60 ~69ì -> D, ë‚˜ë¨¸ì§€ F ì¶œë ¥
 		
 		Scanner sc = new Scanner(System.in);
 		
-		//¼ºÀû ÀÔ·Â ¹Þ±â 
+		//ì„±ì  ìž…ë ¥ ë°›ê¸° 
 		int score = sc.nextInt();
 		
 		if(score >= 90) {
@@ -23,6 +23,8 @@ public class num_9498 {
 			System.out.println('F');
 		}
 		
+		
+		sc.close();
 	}
 
 }
