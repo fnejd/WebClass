@@ -5,6 +5,8 @@ public class find_Primenum {
 
 	public static void main(String[] args) {
 		
+		//완전 탐색 -> 2. 소수 찾기 (level 2)
+		
 		String numbers="011";
 		
 		System.out.println(solution(numbers));
